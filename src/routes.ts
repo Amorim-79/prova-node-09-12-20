@@ -1,17 +1,16 @@
 // Dependencies
 import express from 'express'; 
-// Services
+// Controllers
 import UsersController from './api/controllers/users.controller';
-
-//Instância do Controller de Usuários
-const usersController = new UsersController;
+// Validators
+import UsersValidator from './api/validators/users.validator';
 
 const routes = express.Router();
 
 // Rotas de Usuários
-routes.get('/users', usersController.list);
-routes.post('/users', usersController.create);
-routes.put('/users/:id', usersController.update);
-routes.delete('/users/:id', usersController.delete);
+routes.get('/users', UsersController.list);
+routes.post('/users', UsersValidator ,UsersController.create);
+routes.put('/users/:id', UsersValidator, UsersController.update);
+routes.delete('/users/:id', UsersController.delete);
 
 export default routes;

@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export = {
     client: 'sqlite3',
     connection: {
         filename: path.resolve(__dirname, 'src', 'api', 'database', 'database.sqlite'),
