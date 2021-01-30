@@ -9,7 +9,7 @@ const routes = express.Router();
 
 // Rotas de Usuários
 routes.get('/users', UsersController.list);
-routes.post('/users', UsersValidator ,UsersController.create);
+routes.post('/users', UsersValidator, UsersController.create);
 routes.put('/users/:id', UsersValidator, UsersController.update);
 routes.delete('/users/:id', UsersController.delete);
 
